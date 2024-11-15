@@ -7,6 +7,5 @@ func enter() -> void:
 
 func on_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		var ns := CardState.new()
-		ns.state = CardState.State.DRAGGING
-		transition_requested.emit(self, ns)
+
+		transition_requested.emit(self, CardState.State.DRAGGING)

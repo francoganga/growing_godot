@@ -12,9 +12,8 @@ func enter() -> void:
 func on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_mouse"):
 		card_ui.pivot_offset = card_ui.get_global_mouse_position() - card_ui.global_position
-		var ns := CardState.new()
-		ns.state = CardState.State.CLICKED
-		transition_requested.emit(self, ns)
+
+		transition_requested.emit(self, CardState.State.CLICKED)
 
 
 # Called when the node enters the scene tree for the first time.
